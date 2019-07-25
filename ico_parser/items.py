@@ -19,6 +19,8 @@ class IcoParserItem(scrapy.Item):
     about = scrapy.Field()
     team = scrapy.Field()
     advisers = scrapy.Field()
+    whitepaper_file_url = scrapy.Field()
+    whitepaper_file = scrapy.Field() 
 
 class PersonItem(scrapy.Item):
     _id = scrapy.Field()

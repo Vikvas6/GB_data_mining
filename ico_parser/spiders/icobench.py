@@ -73,21 +73,13 @@ class IcobenchSpider(scrapy.Spider):
             'rating': ratings,
             'about': '\n'.join(response.css('#about p::text').getall()),
             'team': team,
-            'advisers': advisers
+            'advisers': advisers,
+            'whitepaper_file_url': response.css('#whitepaper object::attr(data)')
         }
 
         item = IcoParserItem(**data)
 
-        # for person in data['team']:
-        #     person_item = {}
-
-        yield item
-        
-    # def person_parse(self, response):
-    #     data = {
-    #         'name': response.css().get(),
-    #         'social_links': response.css().get()
-    #     }
+        yield item        
 
     def parse(self, response):
 
